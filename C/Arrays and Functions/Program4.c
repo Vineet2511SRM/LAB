@@ -22,6 +22,12 @@ int main() {
         scanf("%d", &arr[i]);
     }
 
+    printf("The original array is:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
     reverseArray(arr, n);
 
     printf("The reversed array is:\n");
