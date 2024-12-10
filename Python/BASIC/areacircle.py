@@ -1,5 +1,4 @@
-r = float(input())
+radius = float(input("Enter the radius of circle: "))
 pi = 3.142
-a = pi * r * r
-print(f"The area of the circle with radius {r} is: {a:.2f}")
-#dsgndyndy
+area = pi * radius * radius
+print(f"The area of the circle with radius {radius} is: {area:.2f}")
