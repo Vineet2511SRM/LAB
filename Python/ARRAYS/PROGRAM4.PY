@@ -9,14 +9,16 @@ for i in range(rows):
     row = list(map(int, input().split()))
     matrix.append(row)
 
-# Transpose the matrix
-transpose = [[matrix[j][i] for j in range(rows)] for i in range(cols)]
+# Flatten the matrix into a 1D array
+flattened_array = []
+for row in matrix:
+    flattened_array.extend(row)  # Add each row's elements to the flattened array
 
-# Output
+# Output the original matrix
 print("Original Matrix:")
-for i in matrix:
-    print(i)
+for row in matrix:
+    print(row)
 
-print("Transposed Matrix:")
-for j in transpose:
-    print(j)
+# Output the flattened array
+print("Flattened Array:")
+print(flattened_array)
