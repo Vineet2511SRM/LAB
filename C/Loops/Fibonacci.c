@@ -6,7 +6,7 @@ int main(){
     scanf("%d",&n);
     int a=1,b=1;
     int sum=1;
-    for(int i=1;i<=n-2;i++){
+    for(int i=0;i<=n-1;i++){
         sum = a+b;
         a = b;
         b = sum;
