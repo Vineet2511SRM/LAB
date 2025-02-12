@@ -18,7 +18,6 @@ int main()
 
     // e. Display -123.456 as exponential with 4 decimal places
     cout << scientific << setprecision(4) << -123.456 << endl;
-    
 
     return 0;
 }
