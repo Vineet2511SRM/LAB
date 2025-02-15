@@ -1,5 +1,4 @@
 #include <stdio.h>
-int findLargest();
 
 int findLargest(int arr[], int n)
 {

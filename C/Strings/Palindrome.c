@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
+// Function to check if a string is a palindrome (case-insensitive)
 int isPalindrome(char *str) {
     int len = strlen(str);
-    for (int i = 0; i < len / 2; i++){
-
-    
-        if (str[i] != str[len - i - 1]) return 0; // Not a palindrome
+    for (int i = 0; i < len / 2; i++) {
+        // Convert characters to lowercase for comparison
+        if (tolower(str[i]) != tolower(str[len - i - 1])) {
+            return 0; // Not a palindrome
+        }
     }
     return 1; // Is a palindrome
 }
@@ -23,7 +26,8 @@ int main() {
     } else {
         printf("The string \"%s\" is not a palindrome.\n", str);
     }
-    printf("Length of the string is : %d\n",strlen(str));
+
+    printf("Length of the string is: %zu\n", strlen(str));  // Use %zu for size_t
 
     return 0;
 }

@@ -1,17 +1,27 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
+int main() {
     int n;
-    printf("Enter a number.....: ");
-    scanf("%d",&n);
-    int a=1,b=1;
-    int sum=1;
-    for(int i=1;i<=n-2;i++){
-        sum = a+b;
-        a = b;
-        b = sum;
-       
+    printf("Enter a position (n) to find the Fibonacci number: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Invalid input. Please enter a positive integer.\n");
+    } 
+    else if (n == 1) {
+        printf("The 1st Fibonacci number is 0\n");
+    } 
+    else if (n == 2) {
+        printf("The 2nd Fibonacci number is 1\n");
+    } 
+    else {
+        int a = 0, b = 1, sum = 0;
+        for (int i = 3; i <= n; i++) { // Start loop from 3 because 1 and 2 are handled already
+            sum = a + b;
+            a = b;
+            b = sum;
+        }
+        printf("The %dth Fibonacci number is %d\n", n, sum);
     }
-     printf("The %d fibonacci number is %d\n",n,sum);
     return 0;
 }
