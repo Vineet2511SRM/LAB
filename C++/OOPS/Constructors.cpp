@@ -26,7 +26,7 @@ public:
     }
 
     // Operator Overloading for '+'
-    int operator+(const constOver &obj) const {
+    int operator+(constOver &obj) {
         return num1 + obj.num1;
     }
 };
