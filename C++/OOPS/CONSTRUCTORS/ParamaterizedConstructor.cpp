@@ -7,11 +7,7 @@ class Employee {
         string name;
         float salary;
 
-        Employee(int i, string n, float s) {
-            id = i;
-            name = n;
-            salary = s;
-        }
+        Employee(int i, string n, float s): id(i), name(n), salary(s) {}
         
         void display() {
             cout << "Employee ID: " << id << endl;
