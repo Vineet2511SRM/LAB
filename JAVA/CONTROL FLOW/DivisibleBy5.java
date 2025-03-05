@@ -7,9 +7,9 @@ public class DivisibleBy5 {
 		System.out.println("Please enter a number: ");
 		int num = obj.nextInt();
 		
-		if (num%5 == 0) {
-			System.out.println("Is the number "+num+" is divisible by 5? Yesss it is ");}
+		if (num%5 == 0) { // if the number is divisible by 5
+			System.out.println("Is the number "+num+" is divisible by 5? Yesss it is ");} // print this
 		else {
-			System.out.println("Is the number "+num+" is divisible by 5? No it's not ");}
+			System.out.println("Is the number "+num+" is divisible by 5? No it's not ");} // else print this
 		}
 }
