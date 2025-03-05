@@ -155,3 +155,43 @@ Menu:
 
 Enter your choice: 4
 Array elements: 5 10
+
+Menu:
+1. Insert an element
+2. Delete an element
+3. Search for an element
+4. Display all elements
+5. Sort the array
+6. Exit
+
+Enter your choice: 2
+Enter element to delete: 5
+Element deleted successfully.
+
+Menu:
+1. Insert an element
+2. Delete an element
+3. Search for an element
+4. Display all elements
+5. Sort the array
+6. Exit
+
+Enter your choice: 3
+Enter element to search: 10
+Element found at position: 0
+
+Menu:
+1. Insert an element
+2. Delete an element
+3. Search for an element
+4. Display all elements
+5. Sort the array
+6. Exit
+
+Enter your choice: 6
+Exiting program.
+
+
+
+
+*/

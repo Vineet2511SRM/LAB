@@ -11,9 +11,9 @@ class Complex {
 
         // Function to add two complex numbers
         static Complex add(Complex& c1, Complex& c2) {
-            double sumReal = c1.real + c2.real;
-            double sumImaginary = c1.imaginary + c2.imaginary;
-            return Complex(sumReal, sumImaginary);
+            double sumReal = c1.real + c2.real; // Adding the real parts by accessing the private members
+            double sumImaginary = c1.imaginary + c2.imaginary; // Adding the imaginary parts by accessing the private members
+            return Complex(sumReal, sumImaginary); // Returning the sum as a new complex number using the constructor
         }
 
         // Function to display the complex number
