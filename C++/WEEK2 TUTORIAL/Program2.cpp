@@ -20,7 +20,7 @@ void calculateAverage(int* arr, int size) {
     double sum = 0.0;
     for (int i = 0; i < size; ++i) {
         sum += arr[i];
-    }
+    } 
     double average = (sum / size);
     cout << "Average marks of the class: " << average << endl;
 }
