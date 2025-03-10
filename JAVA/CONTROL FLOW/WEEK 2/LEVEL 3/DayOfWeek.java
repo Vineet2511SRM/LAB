@@ -12,7 +12,7 @@ public class DayOfWeek {
         int d = sc.nextInt();
         
         System.out.print("Enter year: ");
-        int y = sc.nextInt();
+        int y = sc.nextInt(); 
         
         sc.close();
         
