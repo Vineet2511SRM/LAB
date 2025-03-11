@@ -1,45 +1,35 @@
+// Explaining the use of protected access specifier in C++.
+
 #include <iostream>
 using namespace std;
 
-class Box {
-protected:
-    double width;  // Now, width is protected
-
-public:
-    double length;
-
-    void setWidth(double w) {
-        width = w;
-    }
-
-    double getWidth() {
-        return width;
-    }
+class Box { // Base class
+    protected : 
+        double width;
 };
 
-// Derived class
-class DerivedBox : public Box {
-public:
-    void showWidth() {
-        cout << "Width accessed in DerivedBox: " << width << endl;  // Allowed because width is protected
-    }
+class SmallBox :  Box { // 
+    public:
+        void setWidth(double wid);
+        double getWidth(void);
 };
 
+// Member functions of child class
+double SmallBox::getWidth(void) { // Function to get width
+    return width;
+}
+
+void SmallBox::setWidth(double wid) { // Function to set width
+    width = wid;
+}
+
+// Main function for the program
 int main() {
-    Box box;
-    DerivedBox dBox;
+    SmallBox box; // Create object of child class
 
-    // Accessing length (public)
-    box.length = 10.0;
-    cout << "Length of box: " << box.length << endl;
-
-    // Setting and getting width using functions
-    box.setWidth(12.5);
-    cout << "Width of box using getWidth(): " << box.getWidth() << endl;
-
-    // Accessing width in derived class
-    dBox.setWidth(15.0);
-    dBox.showWidth();  // Accessing protected member in derived class
-
+    // Set box width using member function
+    box.setWidth(10.0); // Use member function to set width
+    cout << "Width of box: " << box.getWidth() << endl; // Get width using member function because width is protected
+ 
     return 0;
 }
