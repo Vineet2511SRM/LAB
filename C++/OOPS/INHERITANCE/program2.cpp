@@ -22,6 +22,9 @@ public:
 
     // Overloading + for string comparison
     bool operator+(const compare& temp) {
+
+        cout<<"String concatenation: "<<name + temp.name<<endl;
+
         if (name == temp.name) {
             cout << "Strings are equal." << endl;
             return true;
@@ -44,3 +47,10 @@ int main() {
 
     return 0;
 }
+
+// Sample Output:
+// Enter two strings:
+// Hello
+// World
+// String concatenation: HelloWorld
+// Strings are not equal.
