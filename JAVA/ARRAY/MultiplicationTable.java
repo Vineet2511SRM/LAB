@@ -9,17 +9,14 @@ public class MultiplicationTable {
         System.out.print("Enter a number: ");
         int number = sc.nextInt();
 
-        System.out.print("Enter the range: ");
-        int range = sc.nextInt();
+        int[] table = new int[10];
 
-        int[] table = new int[range];
-
-        for (int i = 0; i < range; i++) {
+        for (int i = 0; i < 10; i++) {
             table[i] = number * (i + 1);
         }
 
         System.out.println("Multiplication table of " + number + ":");
-        for (int i = 0; i < range; i++) {
+        for (int i = 0; i < 10; i++) {
             System.out.println(number + " x " + (i + 1) + " = " + table[i]);
         }
 
