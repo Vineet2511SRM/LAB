@@ -84,3 +84,35 @@ int main() {
     
     return 0;
 }
+
+/*SAMPLE INPUT 1 : 
+Enter Account Number: 1011
+Enter Account Holder Name: VINEET SETH
+Enter Initial Balance: 50000
+Enter amount to deposit: 5500
+Deposited: 5500
+Enter amount to withdraw: 15000
+Withdrawn: 15000*/
+
+/*SAMPLE OUTPUT 1 :
+----------------------------------
+Account Number: 1011
+Account Holder Name: VINEET SETH    
+Balance: 40500
+----------------------------------
+
+SAMPLE INPUT 2 :
+Enter Account Number: 1012
+Enter Account Holder Name: RAVI KUMAR
+Enter Initial Balance: 10000
+Enter amount to deposit: 5000
+Deposited: 5000
+Enter amount to withdraw: 20000
+Insufficient balance to withdraw 20000*/
+
+/*SAMPLE OUTPUT 2 :
+----------------------------------
+Account Number: 1012
+Account Holder Name: RAVI KUMAR
+Balance: 15000
+----------------------------------*/
