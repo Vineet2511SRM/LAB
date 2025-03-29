@@ -40,12 +40,19 @@ public:
 };
 
 int main() {
+    // Creating an object using the default constructor
+    Book defaultBook;
+
     // Creating multiple Book objects
     Book b1(101, "The Alchemist", "Paulo Coelho", 15.0);
     Book b2(102, "The Great Gatsby", "F. Scott Fitzgerald", 12.0);
     Book b3(103, "To Kill a Mockingbird", "Harper Lee", 10.0);
 
-    // Displaying information of each book
+    // Displaying book details
+    cout << "Default Book Details:" << endl;
+    defaultBook.displayBookInfo();
+    cout << endl;
+
     cout << "Book 1 Details:" << endl;
     b1.displayBookInfo();
     cout << endl;
