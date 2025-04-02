@@ -49,6 +49,12 @@ public:
 };
 
 int main() {
+
+    //Creating object for default constructor
+    Product product1;
+    product1.displayProductInfo();
+
+    
     // Creating an array of Product objects
     Product products[3] = {
         Product(101, "Laptop", 75000, 1),
