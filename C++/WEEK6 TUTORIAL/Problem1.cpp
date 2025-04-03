@@ -48,10 +48,15 @@ public:
 
 int main() {
     // Creating a SportStudent object
-    SportStudent athlete("Vineet Seth", 101, "Cricket", 2);
+    SportStudent athlete1("Vineet Seth", 101, "Cricket", 2);
 
-    // Display details of the student-athlete
-    athlete.displayDetails();
+    SportStudent athelete2("Aryan Sharma", 102, "Football", 1);
+
+    // Display details of the athletes
+    cout << "Athlete 1 Details:" << endl;
+    athlete1.displayDetails();
+    cout << "Athlete 2 Details:" << endl;
+    athelete2.displayDetails();
 
     return 0;
 }
