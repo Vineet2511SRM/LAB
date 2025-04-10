@@ -49,6 +49,9 @@ int main() {
     rect.getData();
     circ.getData();
 
+    rect.printData();
+    circ.printData();
+
     cout << "\nRectangle Area: " << rect.calculateArea() << endl;
     cout << "Circle Area: " << circ.calculateArea() << endl;
 
