@@ -1,93 +1,56 @@
 #include <iostream>
-#include <cmath> // For M_PI (π value)
+#include <cmath>
 using namespace std;
 
-// Base class: Shape (Abstract Class)
+// Base class Shape
 class Shape {
 public:
-    // Pure virtual function for area calculation
-    virtual double calculateArea() = 0;
-
-    virtual void getData() = 0; // Pure virtual function for getting data
-
-    virtual void printData() = 0; // Pure virtual function for printing data
-
-    // Virtual destructor (important for proper cleanup)
-    virtual ~Shape() {}
+    virtual void getData() = 0; // Pure virtual function
+    virtual void printData() = 0;
+    virtual double calculateArea() = 0; // Pure virtual function
 };
 
-// Derived class: Rectangle (Inherits from Shape)
+// Derived class Rectangle
 class Rectangle : public Shape {
-private:
     double length, width;
-
 public:
-    // Default Constructor
-    Rectangle() : length(0), width(0) {}
-
-    // Parameterized Constructor
-    Rectangle(double l, double w) : length(l), width(w) {}
-
-    // Override function to get data
     void getData() override {
-        cout << "Enter length and width of the rectangle: ";
+        cout << "Enter length and width of Rectangle: ";
         cin >> length >> width;
     }
-
-    // Override area calculation
+    void printData() override {
+        cout << "Rectangle Dimensions: " << length << " x " << width << endl;
+    }
     double calculateArea() override {
         return length * width;
     }
-
-    // Override print function
-    void printData() override {
-        cout << "Rectangle:" << endl;
-        cout << "Length: " << length << ", Width: " << width << endl;
-        cout << "Area: " << calculateArea() << " sq. units" << endl;
-        cout << "--------------------------" << endl;
-    }
 };
 
-// Derived class: Circle (Inherits from Shape)
+// Derived class Circle
 class Circle : public Shape {
-private:
     double radius;
-
 public:
-    // Default Constructor
-    Circle() : radius(0) {}
-
-    // Parameterized Constructor
-    Circle(double r) : radius(r) {}
-
-    // Override function to get data
     void getData() override {
-        cout << "Enter radius of the circle: ";
+        cout << "Enter radius of Circle: ";
         cin >> radius;
     }
-
-    // Override area calculation
+    void printData() override {
+        cout << "Circle Radius: " << radius << endl;
+    }
     double calculateArea() override {
         return M_PI * radius * radius;
-    }
-
-    // Override print function
-    void printData() override {
-        cout << "Circle:" << endl;
-        cout << "Radius: " << radius << endl;
-        cout << "Area: " << calculateArea() << " sq. units" << endl;
-        cout << "--------------------------" << endl;
     }
 };
 
 int main() {
-    Rectangle rect(10, 5);
-    Circle circ(7);
+    Rectangle rect;
+    Circle circ;
 
-    // Print data
-    rect.printData();
-    circ.printData();
+    rect.getData();
+    circ.getData();
+
+    cout << "\nRectangle Area: " << rect.calculateArea() << endl;
+    cout << "Circle Area: " << circ.calculateArea() << endl;
 
     return 0;
-
 }
