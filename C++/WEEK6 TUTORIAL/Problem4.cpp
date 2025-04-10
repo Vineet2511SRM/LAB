@@ -1,48 +1,49 @@
 #include <iostream>
 using namespace std;
 
-// Base class: Student
+// Base class
 class Student {
 protected:
     string name;
     int rollNumber;
 
 public:
-    void setStudentDetails(string n, int r) {
+    void setStudentDetails(string n, int roll) {
         name = n;
-        rollNumber = r;
+        rollNumber = roll;
     }
 
     void displayStudentDetails() {
-        cout << "Student Name: " << name << endl;
+        cout << "Name: " << name << endl;
         cout << "Roll Number: " << rollNumber << endl;
     }
 };
 
-// Derived class: Marks (inherits from Student)
+// Derived class 1: Academics
 class Marks : virtual public Student {
 protected:
-    int subject1, subject2, subject3, totalAcademicMarks;
+    int subject1, subject2, subject3;
+    int totalAcademic;
 
 public:
     void setMarks(int m1, int m2, int m3) {
         subject1 = m1;
         subject2 = m2;
         subject3 = m3;
-        totalAcademicMarks = subject1 + subject2 + subject3;
+        totalAcademic = subject1 + subject2 + subject3;
     }
 
     void displayMarks() {
-        cout << "Academic Marks: " << subject1 << ", " << subject2 << ", " << subject3 << endl;
-        cout << "Total Academic Marks: " << totalAcademicMarks << endl;
+        cout << "Marks in 3 Subjects: " << subject1 << ", " << subject2 << ", " << subject3 << endl;
+        cout << "Total Academic Marks: " << totalAcademic << endl;
     }
 
     int getAcademicTotal() {
-        return totalAcademicMarks;
+        return totalAcademic;
     }
 };
 
-// Derived class: Sports (inherits from Student)
+// Derived class 2: Sports
 class Sports : virtual public Student {
 protected:
     int sportsMarks;
@@ -61,46 +62,32 @@ public:
     }
 };
 
-// Final class: Result (inherits from both Marks & Sports)
+// Final class: Result (Hybrid Inheritance)
 class Result : public Marks, public Sports {
-private:
-    int totalMarks;
-    float average;
-
 public:
-    void calculateResult() {
-        totalMarks = getAcademicTotal() + getSportsMarks();
-        average = totalMarks / 4.0; // 3 subjects + 1 sports mark
-    }
-
     void displayResult() {
+        int grandTotal = getAcademicTotal() + getSportsMarks();
+        float average = grandTotal / 4.0;
+
+        cout << "\n----- Student Performance Report -----\n";
         displayStudentDetails();
         displayMarks();
         displaySportsMarks();
-        cout << "Total Marks (Academic + Sports): " << totalMarks << endl;
+        cout << "Overall Total Marks: " << grandTotal << endl;
         cout << "Average Marks: " << average << endl;
     }
 };
 
 int main() {
-    // Create an object of Result
-    Result student1;
+    Result r;
 
-    // Set student details
-    student1.setStudentDetails("Rahul Sharma", 101);
+    // Input data
+    r.setStudentDetails("Vineet Seth", 101);
+    r.setMarks(85, 90, 88);
+    r.setSportsMarks(75);
 
-    // Set academic marks
-    student1.setMarks(85, 90, 80);
-
-    // Set sports marks
-    student1.setSportsMarks(20);
-
-    // Calculate overall performance
-    student1.calculateResult();
-
-    // Display complete student performance
-    cout << "Student Performance Report:\n";
-    student1.displayResult();
+    // Display result
+    r.displayResult();
 
     return 0;
 }
