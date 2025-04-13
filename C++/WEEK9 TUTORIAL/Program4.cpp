@@ -15,13 +15,13 @@ void deposit(double amount) {
     if (amount < 0) {
         throw NegativeValueException(); // Throw custom exception
     }
-    cout << "₹" << amount << " deposited successfully." << endl;
+    cout << "Rs." << amount << " deposited successfully." << endl;
 }
 
 // Step 3: Main function
 int main() {
     double amount;
-    cout << "Enter amount to deposit: ₹";
+    cout << "Enter amount to deposit: Rs. ";
     cin >> amount;
 
     try {
