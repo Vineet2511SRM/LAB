@@ -1,31 +1,34 @@
 #include <iostream>
-#include <stdexcept>
+#include <exception>
 using namespace std;
 
-// RAII Cleanup class
-class Cleanup {
+// Class to simulate 'finally' block using RAII
+class CleanupGuard {
 public:
-    ~Cleanup() {
+    ~CleanupGuard() {
+        // Cleanup code that always runs
         cout << "Cleanup done." << endl;
     }
 };
 
-// Function that throws an exception
-void doWork() {
-    Cleanup cleanup; // destructor will always run
-    cout << "Doing some work..." << endl;
+void processData(bool triggerError) {
+    CleanupGuard cleanup;  // RAII object created
 
-    // Simulate an error
-    throw runtime_error("Something went wrong!");
-    
-    // Even if no error: cout << "Work done." << endl;
+    cout << "Processing sensitive data..." << endl;
+
+    if (triggerError) {
+        throw runtime_error("An error occurred during processing.");
+    }
+
+    cout << "Data processed successfully." << endl;
 }
 
 int main() {
     try {
-        doWork();
-    } catch (const exception& e) {
-        cout << "Caught exception: " << e.what() << endl;
+        // Change to true to simulate an exception
+        processData(true);
+    } catch (const exception &e) {
+        cout << "Exception caught: " << e.what() << endl;
     }
 
     return 0;
