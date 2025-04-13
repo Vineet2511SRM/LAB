@@ -18,10 +18,14 @@ void handleTransaction(int amount) {
 }
 
 int main() {
+    int transactionAmount;
+    cout << "Enter transaction amount: ";
+    cin >> transactionAmount;
+
     try {
-        handleTransaction(-500);
+        handleTransaction(transactionAmount);
     } catch (const exception& e) {
-        cout << "Exception caught in main: " << e.what() << endl;
+        cout << "Caught in main: " << e.what() << endl;
     }
 
     return 0;
