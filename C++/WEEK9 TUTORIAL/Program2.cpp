@@ -2,54 +2,36 @@
 #include <stdexcept>
 using namespace std;
 
-// Function to check positivity
-void checkPositive(int num) {
+void validatePositive(int num) {
     if (num <= 0) {
-        throw invalid_argument("Error: Number must be positive.");
+        throw runtime_error("Error: Number must be positive.");
     }
 }
 
-// Function to check even number
-void checkEven(int num) {
+void validateEven(int num) {
     if (num % 2 != 0) {
-        throw logic_error("Error: Number must be even.");
+        throw runtime_error("Error: Number must be even.");
     }
 }
 
-// Function to check range
-void checkRange(int num) {
+void validateRange(int num) {
     if (num < 1 || num > 100) {
-        throw out_of_range("Error: Number must be between 1 and 100.");
+        throw runtime_error("Error: Number must be between 1 and 100.");
     }
 }
 
 int main() {
     int number;
-
     cout << "Enter a number: ";
     cin >> number;
 
     try {
-        // Level 1: Positivity
-        checkPositive(number);
-
-        // Level 2: Even check
-        checkEven(number);
-
-        // Level 3: Range check
-        checkRange(number);
-
-        cout << "✅ Valid number for the scientific calculator!" << endl;
-
-    } catch (const invalid_argument &e) {
+        validatePositive(number);
+        validateEven(number);
+        validateRange(number);
+        cout << "Number is valid!" << endl;
+    } catch (const exception& e) {
         cout << e.what() << endl;
-    } catch (const logic_error &e) {
-        cout << e.what() << endl;
-    } catch (const out_of_range &e) {
-        cout << e.what() << endl;
-    } catch (const exception &e) {
-        // Fallback for unexpected exceptions
-        cout << "Unexpected error: " << e.what() << endl;
     }
 
     return 0;
